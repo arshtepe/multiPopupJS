@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="popupStyle.css" rel="stylesheet" type="text/css" >
+    <link href="popup-default.css" rel="stylesheet" type="text/css" >
+    <script src="../dist/multiPopup.js" ></script>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="../bower_components/paper-button/paper-button.html">
+    <link rel="import" href="../bower_components/paper-dialog/paper-action-dialog.html">
+    <link rel="import" href="../bower_components/core-icons/core-icons.html">
+</head>
+<body>
+
+<div id="loader-popup-window" class="loader-popup-window" style="transform: scale(0);">
+    <div id='popup-body' class="popup-loader-body">
+        <div class="loader-wrapper">
+            <svg class="circular">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+            <span class="static-text"> Loading  </span> <span id="countdown-text" class="countdown-text" > </span>
+    </div>
+</div>
+
+
+<div id="popup-window" class="popup-window" >
+    <p>Some content</p>
+    <paper-button class="popup-close-button"  data-popup-value = "cancel" >
+      <core-icon icon="clear" aria-label="clear" role="img"> </core-icon>
+        Cancel
+    </paper-button>
+    <paper-button class="colored custom popup-action-button" data-popup-value = "ok" >
+        <core-icon icon="check" aria-label="check" role="img"></core-icon>
+        Ok
+    </paper-button>
+</div>
+
+
+<paper-button raised="" id="loading-button" class="colored" role="button" tabindex="0"> Loading Animation </paper-button>
+<paper-button raised="" id="popup-button" noink="" role="button" tabindex="0"> popup Window </paper-button>
+<paper-button raised="" id="popup-destroy" noink="" role="button" tabindex="0"> destroy </paper-button>
+
+
+
+
+<script>
+
+    ( function() {
+
+        document.getElementById( "popup-destroy").onclick = function () {
+            popup.destroy(  );
+        };
+
+        var win =  document.getElementById( "popup-window"),
+            loaderWin = document.getElementById( "loader-popup-window"),
+            btLoadingWin = document.getElementById( "loading-button"),
+            btPopupWin = document.getElementById( "popup-button"),
+            countdownElem = document.getElementById( "countdown-text" );
+
+        var popup = new MultiPopup();
+
+        popup.addWindow( "loaderWin", loaderWin,
+        {
+            setStartWindowPosition: function () {
+                var basic = this.setBasicEndPosition();
+                this.window.style.top = basic.top - this.window.offsetHeight - 100  + "px";
+            },
+
+            setEndWindowPosition: function () {
+                this.setBasicEndPosition();
+                this.window.style.top = 50 + "px";
+            }
+
+        } );
+
+
+        popup.addWindow( "mWin", win, {
+            opt_handlerClickCls: "popup-action-button",
+            opt_hideButtonCls: "popup-close-button",
+            opt_isOverlayClickHide: true
+        });
+
+
+        popup.on( "dataClick", function ( status ) {
+
+            console.log( status );
+            console.log( "click" );
+
+            if( status == "ok" ) {
+                alert( "ok" )
+            }
+
+        }, win );
+
+
+        popup.show( "mWin" );
+
+
+        popup.on( "show", function ( ) {
+            this.window.style.transform = "scale(1)";
+        }, "loaderWin" );
+
+        popup.on( "hide", function ( ) {
+            this.window.style.transform = "scale(0)";
+        }, loaderWin );
+
+        btLoadingWin.onclick = function () {
+            popup.show( "loaderWin" );
+            startCountdown( 5 );
+        };
+
+        btPopupWin.onclick = function () {
+            popup.show( "mWin" );
+        };
+
+
+        function startCountdown( i ) {
+            setTimeout( function () {
+                if( --i == 0 ) {
+                   return popup.hide();
+                }
+
+                countdownElem.innerHTML = i;
+                startCountdown( i );
+
+            }, 1000 );
+
+            return i;
+        }
+
+    } () );
+
+
+
+
+</script>
+
+
+</body>
+</html>

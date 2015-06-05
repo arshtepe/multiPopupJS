@@ -1,0 +1,25 @@
+.popup-overlay {
+
+ width: 100%;
+ height: 100%;
+ z-index: 99999;
+ background-color: black;
+ opacity: .8;
+ display: none;
+ position: fixed;
+ top:0;
+ left: 0;
+
+ -webkit-box-shadow: 0 0 15px #fff;
+ -moz-box-shadow: 0 0 15px #fff;
+  -o-box-shadow: 0 0 15px #fff;
+  box-shadow: 0 0 15px #fff;
+  
+}
+
+.popup-window-animate {
+    transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    -moz-transition: all  .4s ease-in;
+    -webkit-transition: all  .4s ease-in;
+}

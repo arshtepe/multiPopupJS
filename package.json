@@ -1,0 +1,31 @@
+{
+  "name": "multiPopup",
+  "version": "2.0.0",
+  "description": "Popup window script",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyberua/multiPopupJS.git"
+  },
+  "keywords": [
+    "modal",
+    "window",
+    "popup",
+    "multi",
+    "multi popup"
+  ],
+  "author": "Artem Shtepenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyberua/multiPopupJS/issues"
+  },
+  "homepage": "https://github.com/cyberua/multiPopupJS",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-monic": "^1.0.2"
+  }
+}
