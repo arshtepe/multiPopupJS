@@ -1,7 +1,7 @@
 ##Demo
-* https://jsfiddle.net/x8w604f4/3/embedded/result/ - demo ( https://jsfiddle.net/x8w604f4/3/ )
-* https://jsfiddle.net/x8w604f4/5/embedded/result/ - animation change demo
-* https://jsfiddle.net/x8w604f4/4/embedded/result/ - animation change demo
+* https://jsfiddle.net/x8w604f4/6/embedded/result/ - demo ( https://jsfiddle.net/x8w604f4/6/ )
+* https://jsfiddle.net/x8w604f4/7/embedded/result/ - animation change demo
+* https://jsfiddle.net/x8w604f4/8/embedded/result/ - animation change demo
 
 ##Installation
 ```HTML
@@ -170,7 +170,7 @@
  
 ##Animation change example
 
-http://jsfiddle.net/x8w604f4/5/
+http://jsfiddle.net/x8w604f4/7/
 
 ```javascript
  popup.setStartAnimationPosition = function() {
@@ -195,7 +195,7 @@ http://jsfiddle.net/x8w604f4/5/
  
 ##Animation change example
 
-http://jsfiddle.net/x8w604f4/4/
+http://jsfiddle.net/x8w604f4/8/
 
 
 ```javascript
