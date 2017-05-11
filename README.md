@@ -1,15 +1,15 @@
-##Demo
+## Demo
 * https://jsfiddle.net/x8w604f4/6/embedded/result/ - demo ( https://jsfiddle.net/x8w604f4/6/ )
 * https://jsfiddle.net/x8w604f4/7/embedded/result/ - animation change demo
 * https://jsfiddle.net/x8w604f4/8/embedded/result/ - animation change demo
 
-##Installation
+## Installation
 ```HTML
 <link href="path_to/popup-default.css" rel="stylesheet" type="text/css">
 <script src="path_to/multiPopup.min.js"></script>
 ```
 
-##Features
+## Features
 * Cross browser compatibility
 * Without additional libraries
 * Easy usage
@@ -193,7 +193,7 @@ http://jsfiddle.net/x8w604f4/7/
 
 ```
  
-##Animation change example
+## Animation change example
 
 http://jsfiddle.net/x8w604f4/8/
 
