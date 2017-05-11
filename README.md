@@ -168,7 +168,7 @@
  ```
  
  
-##Animation change example
+## Animation change example
 
 http://jsfiddle.net/x8w604f4/7/
 
